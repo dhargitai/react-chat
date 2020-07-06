@@ -1,0 +1,30 @@
+{
+  "name": "react-chat-client",
+  "version": "1.0.0",
+  "description": "React Chat",
+  "author": "David Hargitai <david@leadforward.hu>",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6",
+    "yarn": "*"
+  },
+  "main": "app.js",
+  "scripts": {
+    "dev": "concurrently -r \"npm:server\" \"npm:client\"",
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "cd client && npm run dev",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "concurrently": "^5.2.0"
+  }
+}
